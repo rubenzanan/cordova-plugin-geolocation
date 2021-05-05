@@ -91,9 +91,11 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <source-file src="src/ios/CDVLocation.m" />
         <framework src="CoreLocation.framework" />
       
-        <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-          <string>need location access to find things nearby</string>
-        </edit-config>
+         <preference name="GEOLOCATION_USAGE_DESCRIPTION" default=" " />
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+            <string></string>
+            <string>teste</string>
+        </config-file>
 
     </platform>
 
@@ -124,7 +126,4 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </js-module>
     </platform>
   
-  <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-    <string>need location access to find things nearby</string>
-  </edit-config>
 </plugin>
